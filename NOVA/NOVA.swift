@@ -2,7 +2,7 @@
 //  NOVA.swift
 //  NOVA
 //
-//  Created by Ian Nail on 12/26/23.
+//  Created by Ian and Haley Nail on 12/26/23.
 //
 
 import SwiftUI
