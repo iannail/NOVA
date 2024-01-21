@@ -8,12 +8,26 @@
 import Foundation
 
 let poemsData = [
-    "poem0",
-    "poem1",
-    "poem2",
-    "poem3",
-    "poem4",
-    "poem5",
+    "Are you ready to achieve your dreams?",
+    "Release your inhibitions. Draw your focus to what matters most.",
+    "Growth is just a series of small steps.",
+    "What would you work towards if you knew you couldn't fail?",
+    "What if the things holding you back were suddenly removed?\nWhat might you achieve then?",
+    "What would it look like to live out your most important values?",
+    "Inspiration is important, but at some point it's time to get up and take action.",
+    "Where are you heading in life?",
+    "Look at you. Playing this game and looking cute.",
+    "You are doing great",
+    "The flowers bloom in different seasons, and you also will bloom at the right time.",
+    "Sometimes, relaxation is the most productive action you can take.",
+    "Deep, slow breaths. In for 4, out for 6. Repeat x5. Feel the calm spread through your body.",
+    "You are relaxing, healing, traveling safely toward your destination.",
+    "Be kind to yourself. You are growing.",
+    "What would it look like to reconnect with your worth?",
+    "Failure is just another step towards success.",
+    "The bird is still safe when the branch breaks because it's trust is in its own wings, and you too can trust your wings to carry you safely through hard things.",
+    
+    
 ]
 
 let introPoems = [
