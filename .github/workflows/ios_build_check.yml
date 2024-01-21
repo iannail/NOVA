@@ -17,7 +17,7 @@ jobs:
       env:
           scheme: ${{ 'NOVA' }}
           platform: ${{ 'iOS Simulator' }}
-      run: xcodebuild -workspace NOVA.xcworkspace -scheme NOVA -destination 'platform=iOS Simulator,OS=17.2' build
+      run: xcodebuild -workspace NOVA.xcodeproj -scheme NOVA -destination 'platform=iOS Simulator,OS=17.2' build
           
       #run: |
       #    xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
