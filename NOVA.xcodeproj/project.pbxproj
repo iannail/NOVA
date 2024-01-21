@@ -29,7 +29,6 @@
 		681C21282B3B28D400B90FC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		681C212F2B3B2AD100B90FC5 /* coreMotionInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreMotionInit.swift; sourceTree = "<group>"; };
 		681C21312B3B5CC300B90FC5 /* reusedStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reusedStructs.swift; sourceTree = "<group>"; };
-		6829EC0F2B5D7F930054BDBF /* NOVA.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = NOVA.xctestplan; path = ../NOVA.xctestplan; sourceTree = "<group>"; };
 		68A4BCF42B3FE861001269A9 /* quoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quoteView.swift; sourceTree = "<group>"; };
 		68A4BCF62B40FC4A001269A9 /* introView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introView.swift; sourceTree = "<group>"; };
 		68B1652F2B3F1E9700CD097B /* menuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
@@ -52,7 +51,6 @@
 		681C21132B3B28D300B90FC5 = {
 			isa = PBXGroup;
 			children = (
-				6829EC0F2B5D7F930054BDBF /* NOVA.xctestplan */,
 				681C211E2B3B28D300B90FC5 /* NOVA */,
 				681C211D2B3B28D300B90FC5 /* Products */,
 			);
