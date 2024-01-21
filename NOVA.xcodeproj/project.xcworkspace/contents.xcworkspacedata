@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/iannail/Documents/IOSApps/NOVA/NOVA.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
