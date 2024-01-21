@@ -18,6 +18,7 @@
 		68B165302B3F1E9700CD097B /* menuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B1652F2B3F1E9700CD097B /* menuView.swift */; };
 		68B165322B3F382F00CD097B /* zenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B165312B3F382F00CD097B /* zenView.swift */; };
 		68B165342B3F985F00CD097B /* settingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B165332B3F985F00CD097B /* settingsView.swift */; };
+		68F9968D2B5CD8DD00F85964 /* novaPoems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F9968C2B5CD8DD00F85964 /* novaPoems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		68B1652F2B3F1E9700CD097B /* menuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuView.swift; sourceTree = "<group>"; };
 		68B165312B3F382F00CD097B /* zenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zenView.swift; sourceTree = "<group>"; };
 		68B165332B3F985F00CD097B /* settingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsView.swift; sourceTree = "<group>"; };
+		68F9968C2B5CD8DD00F85964 /* novaPoems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = novaPoems.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				68B165332B3F985F00CD097B /* settingsView.swift */,
 				681C212F2B3B2AD100B90FC5 /* coreMotionInit.swift */,
 				681C21312B3B5CC300B90FC5 /* reusedStructs.swift */,
+				68F9968C2B5CD8DD00F85964 /* novaPoems.swift */,
 				681C21252B3B28D400B90FC5 /* Assets.xcassets */,
 				681C21272B3B28D400B90FC5 /* Preview Content */,
 			);
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F9968D2B5CD8DD00F85964 /* novaPoems.swift in Sources */,
 				68B165322B3F382F00CD097B /* zenView.swift in Sources */,
 				68A4BCF72B40FC4A001269A9 /* introView.swift in Sources */,
 				68A4BCF52B3FE861001269A9 /* quoteView.swift in Sources */,

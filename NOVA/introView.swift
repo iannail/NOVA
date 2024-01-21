@@ -9,8 +9,9 @@ import SwiftUI
 
 struct introView: View {
     let myCustomFont = Font.custom("Optima", size: 22).italic()
-    //@ObservedObject var myMotionInfo: myMotionInfo
+
     @ObservedObject var myViewinfo: myViewinfo
+    
     @State private var timer: Timer?
     @State private var timerbool: Bool = false
     @State private var xcord = -220.0 //initial value
@@ -21,8 +22,6 @@ struct introView: View {
     private let thetaSpeed: Double = 0.02
     @State private var rocketPhase: Int = 0
     @State private var myRadian = 0.0
-    var poem = PoemData(poem1: "Come explore the galaxy.\nFill your vision with the stars\nThe moon and the planets are steps along your path\nAsteroids and black holes the hurdles you face\n",
-                        poem2: "Come break out of orbit\nTo search the universe stretching ever on\nFuel your rocket with dreams and intentions\nAnd find your deepest self will also expand")
     
     var body: some View {
         
@@ -44,7 +43,7 @@ struct introView: View {
                     Spacer()
                     Spacer()
                     
-                    Text(poem.poem1)
+                    Text(myViewinfo.introPoem[0])
                         .font(myCustomFont)
                         .padding(20)
                     Spacer()
@@ -54,7 +53,7 @@ struct introView: View {
                     
                     VStack {
                     Spacer()
-                        Text(poem.poem2)
+                        Text(myViewinfo.introPoem[1])
                             .font(myCustomFont)
                             .padding(20)
                     
@@ -138,11 +137,6 @@ struct introView: View {
         myRadian  = atan2(ycord - pointy, xcord-pointx)
 
     }
-}
-
-struct PoemData {
-    var poem1: String
-    var poem2: String
 }
 
 //******** Preview ******** //
