@@ -1,13 +1,13 @@
 //
-//  novaPoems.swift
+//  novaQuotes.swift
 //  NOVA
 //
-//  Created by Ian Nail on 1/20/24.
+// 
 //
 
 import Foundation
 
-let poemsData = [
+let quoteList = [
     "Are you ready to achieve your dreams?",
     "Release your inhibitions. Draw your focus to what matters most.",
     "Growth is just a series of small steps.",
@@ -30,7 +30,7 @@ let poemsData = [
     
 ]
 
-let introPoems = [
+let introQuotes = [
     
     "Come explore the galaxy.\nFill your vision with the stars\nThe moon and the planets are steps along your path\nAsteroids and black holes the hurdles you face\n",
     
