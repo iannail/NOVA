@@ -20,7 +20,7 @@ struct quoteView: View {
         withAnimation {
 
             VStack {
-                Text(myViewinfo.quotes[myViewinfo.quoteIncrement])
+                Text(myViewinfo.poems[myViewinfo.quoteIncrement])
                     .font(myCustomFont)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     .ignoresSafeArea(.all)
@@ -45,7 +45,7 @@ struct quoteView: View {
         
         // Change the variable without triggering a view update
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            if myViewinfo.quoteIncrement == myViewinfo.quotes.count - 1 {
+            if myViewinfo.quoteIncrement == myViewinfo.poems.count - 1 {
                 myViewinfo.quoteIncrement = 0
             } else {
                 myViewinfo.quoteIncrement += 1

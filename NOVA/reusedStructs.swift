@@ -27,8 +27,8 @@ class myViewinfo: ObservableObject {
     @Published var quoteIncrement: Int = 0
     @Published var myStateOptions: myStateOptions = .oninit
     
-    @Published var quotes = quoteList
-    @Published var introQuote = introQuotes
+    @Published var poems = poemsData
+    @Published var introPoem = introPoems
 }
 
 struct AppPhaseObserver: ViewModifier {

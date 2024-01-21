@@ -43,7 +43,7 @@ struct introView: View {
                     Spacer()
                     Spacer()
                     
-                    Text(myViewinfo.introQuote[0])
+                    Text(myViewinfo.introPoem[0])
                         .font(myCustomFont)
                         .padding(20)
                     Spacer()
@@ -53,7 +53,7 @@ struct introView: View {
                     
                     VStack {
                     Spacer()
-                        Text(myViewinfo.introQuote[1])
+                        Text(myViewinfo.introPoem[1])
                             .font(myCustomFont)
                             .padding(20)
                     
