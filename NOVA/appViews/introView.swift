@@ -26,6 +26,8 @@ struct introView: View {
     var body: some View {
         
         ZStack {
+            Color.black
+                .ignoresSafeArea(.all)
             Image("rocket")
                 .resizable()
                 .frame(width: 30, height: 30, alignment: .center)
@@ -45,6 +47,7 @@ struct introView: View {
                     
                     Text(myViewinfo.introQuote[0])
                         .font(myCustomFont)
+                        .foregroundColor(.white)
                         .padding(20)
                     Spacer()
                 }
@@ -55,6 +58,7 @@ struct introView: View {
                     Spacer()
                         Text(myViewinfo.introQuote[1])
                             .font(myCustomFont)
+                            .foregroundColor(.white)
                             .padding(20)
                     
                     Spacer()

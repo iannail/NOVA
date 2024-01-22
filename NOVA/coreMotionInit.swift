@@ -21,8 +21,8 @@ class myMotionInfo: ObservableObject {
     @Published var xRandom: CGFloat = 0
     @Published var accelerometerData: (x: Double, y: Double, z: Double) = (0, 0, 0)
     @Published var isplay: Bool = false
-    @Published var minAccel = 0.03 //filter on the minimum accelerometer values to update
-    @Published var vel_multiplier = 0.10 // velocity multiplier
+    @Published var minAccel = 0.03          //filter on the minimum accelerometer values to update
+    @Published var vel_multiplier = 0.10    // velocity multiplier
     @Published var timer: Timer?
     @Published var timerbool: Bool = false
     
@@ -34,8 +34,8 @@ class myMotionInfo: ObservableObject {
     private var XDeltaX: CGFloat = 0
     
     let motionManager = CMMotionManager()
-    let screenWidth = UIScreen.main.bounds.width - 200
-    let screenHeight = UIScreen.main.bounds.height - 50
+    let screenWidth = UIScreen.main.bounds.width/2-5
+    let screenHeight = UIScreen.main.bounds.height/2-50
     
     // start accelerometer
     func startAccelerometerUpdates() {
@@ -57,8 +57,8 @@ class myMotionInfo: ObservableObject {
     }
     
     func initRandom() {
-        yRandom = CGFloat.random(in: -screenHeight+100...0)
-        xRandom = CGFloat.random(in: -screenWidth+20...screenWidth-20)
+        yRandom = CGFloat.random(in: -screenHeight...screenHeight)
+        xRandom = CGFloat.random(in: -screenWidth...screenWidth)
     }
     func setRandom() {
         if (abs(ycoord - yRandom) < 20) && (abs(xcoord - xRandom) < 20) {
@@ -92,7 +92,7 @@ class myMotionInfo: ObservableObject {
         }
         
         if (accelerometerData.y  > minAccel) || (accelerometerData.y < -minAccel) {
-            deltaY = (-1) * accelerometerData.y //Delta  Y
+            deltaY = accelerometerData.y //Delta  Y
             
         }else{
             deltaY = 0
@@ -115,8 +115,8 @@ class myMotionInfo: ObservableObject {
             velocityY = 0
         }
 
-        if ycoord > 0 {
-            ycoord = 0
+        if ycoord > screenHeight  {
+            ycoord = screenHeight
             velocityY = 0
         }
         

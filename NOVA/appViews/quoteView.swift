@@ -16,12 +16,16 @@ struct quoteView: View {
     @State private var hasHandledTap = false // Flag to track tap gesture
     
     var body: some View {
-        
+        ZStack{
+            Color.black
+                .ignoresSafeArea(.all)
+            
         withAnimation {
-
+            
             VStack {
                 Text(myViewinfo.quotes[myViewinfo.quoteIncrement])
                     .font(myCustomFont)
+                    .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     .ignoresSafeArea(.all)
                     .contentShape(Rectangle())
@@ -31,12 +35,15 @@ struct quoteView: View {
         .gesture(TapGesture()
             .onEnded {
                 if !hasHandledTap { // Allow only one tap gesture
-                                    handleTapGesture()
-                                    hasHandledTap = true
-                                }
+                    handleTapGesture()
+                    hasHandledTap = true
+                }
             })
         .transition(AnyTransition.opacity.animation(.easeIn(duration: 0.6)))
     }
+}
+    
+    
     private func handleTapGesture() {
         
         // Update the variable that might trigger a view update
@@ -45,12 +52,9 @@ struct quoteView: View {
         
         // Change the variable without triggering a view update
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            if myViewinfo.quoteIncrement == myViewinfo.quotes.count - 1 {
-                myViewinfo.quoteIncrement = 0
-            } else {
-                myViewinfo.quoteIncrement += 1
-            }
+            myViewinfo.quoteIncrement = Int.random(in: 0...myViewinfo.quotes.count-1)
         }
+        //CGFloat.random(in: -screenWidth...screenWidth)
     }
 }
 

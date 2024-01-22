@@ -13,75 +13,79 @@ struct zenView: View {
     @ObservedObject var myViewinfo: myViewinfo
     @State private var timer: Timer?
     @State private var timerbool: Bool = false
-    @State private var showQuoteint = 0
+    @State private var showQuote = 0
     
     var body: some View {
-        ZStack {
-            VStack{
-                HStack {
-                    classic_button(buttonWidth: 40, buttonHeight: 40, fontSize: 32, systemImageName: "line.3.horizontal", buttonColor: .black, fontColor: .white){
-                        if myMotionInfo.isplay {
+            
+            ZStack {
+                    Color.black
+                        .ignoresSafeArea(.all)
+                VStack{
+                    HStack {
+                        classic_button(buttonWidth: 40, buttonHeight: 40, fontSize: 32, systemImageName: "line.3.horizontal", buttonColor: .black, fontColor: .white){
+                            if myMotionInfo.isplay {
+                                timertoggle()
+                                myMotionInfo.isplaytrue()
+                            }
+                            myViewinfo.myViewOptions = .menuView
+                        }
+                        .padding(20)
+                        
+                        Spacer()
+                        Text("\(myMotionInfo.scoreZen)")
+                            .font(.largeTitle)
+                        
+                        Spacer()
+                        classic_button(buttonWidth: 40, buttonHeight: 40, fontSize: 32, systemImageName: "playpause", buttonColor: .black, fontColor: .white ){
                             timertoggle()
                             myMotionInfo.isplaytrue()
                         }
-                        myViewinfo.myViewOptions = .menuView
+                        .padding(20)
                     }
-                    .padding(20)
-                    
+                    //.padding(30)
                     Spacer()
-                    Text("\(myMotionInfo.scoreZen)")
-                        .font(.largeTitle)
-                    
-                    Spacer()
-                    classic_button(buttonWidth: 40, buttonHeight: 40, fontSize: 32, systemImageName: "playpause", buttonColor: .black, fontColor: .white ){
+                }
+                .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
+
+            .onAppear(){
+                if myViewinfo.myStateOptions == .startmovement{
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                         timertoggle()
                         myMotionInfo.isplaytrue()
+                        myViewinfo.myStateOptions = .nothing
                     }
-                    .padding(20)
                 }
-                //.padding(30)
-                Spacer()
+            }
+            
+                Image(systemName: "star")
+                    .offset(x: myMotionInfo.xRandom, y: myMotionInfo.yRandom)
+                    .foregroundColor(.white)
+                    .scaleEffect(y: -1)
+                
+                Image("rocket")
+                    .resizable()
+                    .frame(width: 30, height: 30, alignment: .center)
+                    .colorInvert()
+                    .rotationEffect(.radians(myMotionInfo.myRadian + 0.785398))
+                    .offset(x: myMotionInfo.xcoord, y: myMotionInfo.ycoord)
+                    .scaleEffect(y: -1)
             }
             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
-        }
-        .onAppear(){
-            if myViewinfo.myStateOptions == .startmovement{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            .appPhaseObserver {
+                // Perform state change logic when app goes inactive or to background
+                //myViewinfo.myViewOptions = .introView
+                if myMotionInfo.isplay {
                     timertoggle()
                     myMotionInfo.isplaytrue()
-                    myViewinfo.myStateOptions = .nothing
                 }
             }
         }
-        
-        ZStack {
-            Image(systemName: "star")
-            //.font(.title)
-                .offset(x: myMotionInfo.xRandom, y: myMotionInfo.yRandom)
-            
-            Image("rocket")
-                .resizable()
-                .frame(width: 30, height: 30, alignment: .center)
-                .colorInvert()
-                .rotationEffect(.radians(myMotionInfo.myRadian + 0.785398))
-                .offset(x: myMotionInfo.xcoord, y: myMotionInfo.ycoord)
-        }
-        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
-        .appPhaseObserver {
-              // Perform state change logic when app goes inactive or to background
-            //myViewinfo.myViewOptions = .introView
-            if myMotionInfo.isplay {
-                timertoggle()
-                myMotionInfo.isplaytrue()
-            }
-            }
-    }
     
     private func startTimer() {
         // Make sure to stop the timer if it's already running
         //stoptimer()
         timerbool = true
-        showQuoteint =  myMotionInfo.scoreZen + Int.random(in: 15...20)
+        showQuote =  myMotionInfo.scoreZen + Int.random(in: 15...20)
         // Start a new timer
         timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60.0, repeats: true) { timer in
             // Timer action
@@ -98,7 +102,7 @@ struct zenView: View {
             myMotionInfo.setRandom()
 
             // show a quote after a random number of stars are collected.
-            if myMotionInfo.scoreZen == showQuoteint {
+            if myMotionInfo.scoreZen == showQuote {
                 
                 if myMotionInfo.isplay {
                     timertoggle()
