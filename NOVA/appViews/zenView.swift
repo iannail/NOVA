@@ -73,7 +73,6 @@ struct zenView: View {
             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             .appPhaseObserver {
                 // Perform state change logic when app goes inactive or to background
-                //myViewinfo.myViewOptions = .introView
                 if myMotionInfo.isplay {
                     timertoggle()
                     myMotionInfo.isplaytrue()

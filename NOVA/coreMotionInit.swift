@@ -5,7 +5,6 @@
 //  Created by Ian Nail on 12/26/23.
 //
 
-import Foundation
 import CoreMotion
 import SwiftUI
 

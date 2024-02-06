@@ -24,11 +24,10 @@ enum myStateOptions {
 class myViewinfo: ObservableObject {
     
     @Published var myViewOptions: myViewOptions = .introView
-    @Published var quoteIncrement: Int = 0
     @Published var myStateOptions: myStateOptions = .oninit
-    
     @Published var quotes = quoteData
     @Published var introQuote = introQuotes
+    @Published var quoteIncrement = Int.random(in: 0...quoteData.count-1)
 }
 
 struct AppPhaseObserver: ViewModifier {

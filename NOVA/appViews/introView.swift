@@ -22,6 +22,7 @@ struct introView: View {
     private let thetaSpeed: Double = 0.02
     @State private var rocketPhase: Int = 0
     @State private var myRadian = 0.0
+    @State private var incrementView = 0
     
     var body: some View {
         
@@ -71,7 +72,10 @@ struct introView: View {
         .gesture(TapGesture()
             .onEnded {
                 //change to a different view
-                myViewinfo.myViewOptions = .zenView
+                rocketPhase += 1
+                if rocketPhase >= 4 {
+                    myViewinfo.myViewOptions = .zenView
+                }
             })
     }
     
@@ -132,6 +136,8 @@ struct introView: View {
             }
         case 3:
             stoptimer()
+            myViewinfo.myViewOptions = .zenView
+        case 4:
             myViewinfo.myViewOptions = .zenView
         default:
             print("\(xcord)")

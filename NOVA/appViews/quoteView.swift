@@ -14,7 +14,7 @@ struct quoteView: View {
     @ObservedObject var myViewinfo: myViewinfo
     
     @State private var hasHandledTap = false // Flag to track tap gesture
-    
+
     var body: some View {
         ZStack{
             Color.black
@@ -54,7 +54,6 @@ struct quoteView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             myViewinfo.quoteIncrement = Int.random(in: 0...myViewinfo.quotes.count-1)
         }
-        //CGFloat.random(in: -screenWidth...screenWidth)
     }
 }
 
