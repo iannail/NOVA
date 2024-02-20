@@ -84,7 +84,7 @@ struct zenView: View {
         // Make sure to stop the timer if it's already running
         //stoptimer()
         timerbool = true
-        showQuote =  myMotionInfo.scoreZen + Int.random(in: 15...20)
+        showQuote =  myMotionInfo.scoreZen + 10 //Int.random(in: 9...11)
         // Start a new timer
         timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60.0, repeats: true) { timer in
             // Timer action

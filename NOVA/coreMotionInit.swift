@@ -14,9 +14,9 @@ class myMotionInfo: ObservableObject {
     @AppStorage("score") var scoreZen: Int = 0
     
     @Published var xcoord: CGFloat = 0
-    @Published var ycoord: CGFloat = -250
-    @Published var myRadian: CGFloat = 0
-    @Published var yRandom: CGFloat = 0
+    @Published var ycoord: CGFloat = 250
+    @Published var myRadian: CGFloat = 4.71239
+    @Published var yRandom: CGFloat = -200
     @Published var xRandom: CGFloat = 0
     @Published var accelerometerData: (x: Double, y: Double, z: Double) = (0, 0, 0)
     @Published var isplay: Bool = false

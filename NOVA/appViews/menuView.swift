@@ -37,13 +37,6 @@ struct menuView: View {
                     Spacer()
                     
                 }
-                HStack {
-                    classic_button(buttonWidth: 200, buttonHeight: 30, fontSize: 24, name: "Temp", buttonColor: .black, fontColor: .white ){
-                        myViewinfo.myViewOptions = .tempView
-                    }
-                    .padding(20)
-                    Spacer()
-                }
                 
                 HStack {
                     classic_button(buttonWidth: 200, buttonHeight: 30, fontSize: 24, systemImageName: "gear", buttonColor: .black, fontColor: .white ){
